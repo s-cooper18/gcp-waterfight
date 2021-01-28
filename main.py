@@ -28,8 +28,6 @@ moves = ['F', 'T', 'L', 'R']
 def move():
     request.get_data()
     logger.info(request.json)
-    logger.info(request.form)
-    logger.info(request.args)
     return moves[random.randrange(len(moves))]
 
 
