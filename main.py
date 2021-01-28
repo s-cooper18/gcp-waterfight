@@ -17,6 +17,7 @@ import os
 import logging
 import random
 from flask import Flask, request
+import json
 
 logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 logger = logging.getLogger(__name__)
@@ -28,8 +29,10 @@ moves = ['F', 'T', 'L', 'R']
 def move():
     request.get_data()
     logger.info(request.json)
-    logger.info(request.args)
-    return moves[random.randrange(len(moves))]
+    
+    request_dict = request
+
+    return moves[0]
 
 
 if __name__ == "__main__":
